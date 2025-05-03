@@ -1,0 +1,12 @@
+ALTER TABLE points
+ALTER COLUMN geom 
+  TYPE Geometry(Point, 25833) 
+  USING ST_Transform(geom, 25833);
+ALTER TABLE lines
+ALTER COLUMN geom 
+  TYPE Geometry(Linestring, 25833) 
+  USING ST_Transform(geom, 25833);
+ALTER TABLE polygons
+ALTER COLUMN geom 
+  TYPE Geometry(Polygon, 25833) 
+  USING ST_Transform(geom, 25833);
